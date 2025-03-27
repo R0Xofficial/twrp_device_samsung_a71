@@ -1,4 +1,4 @@
-MKBOOTIMG := device/samsung/a71/mkbootimg
+MKBOOTIMG := device/samsung/a71/mkboot/bootimg
 
 FLASH_IMAGE_TARGET ?= $(PRODUCT_OUT)/recovery.tar
 
