@@ -3,4 +3,5 @@ ro.product.board=sm6150
 ro.board.platform=sm6150
 sys.usb.controller=a600000.dwc3
 ro.boot.dynamic_partitions=true
-ro.boot.boot_devices=soc/1d84000.ufshc
+#fbe.metadata.wrappedkey=true
+ro.boot.bootdevice=1d84000.ufshc
