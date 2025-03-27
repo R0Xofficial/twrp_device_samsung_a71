@@ -26,18 +26,18 @@ TARGET_USES_UEFI := true
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a53
-TARGET_CPU_VARIANT_RUNTIME := cortex-a53
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := generic
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
+TARGET_2ND_CPU_VARIANT := cortex-a9
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a9
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -55,7 +55,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_BOARD_PLATFORM := sm6150
 BOARD_USES_QCOM_HARDWARE := true
 QCOM_BOARD_PLATFORMS := sm6150
-TARGET_BOARD_PLATFORM_GPU := Adreno-618
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
 
 # Kernel
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
@@ -67,12 +67,12 @@ TARGET_KERNEL_ARCH := arm64
 # Boot
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on loop.max_part=7
+BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 firmware_class.path=/vendor/firmware_mnt/image nokaslr printk.devkmsg=on androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_RAMDISK_OFFSET := 0x02000000
-BOARD_KERNEL_SECOND_OFFSET := 0x00000000
+BOARD_KERNEL_SECOND_OFFSET := 0x00f00000
 BOARD_KERNEL_TAGS_OFFSET := 0x01e00000
 BOARD_DTB_OFFSET := 0x01f00000
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) 
@@ -90,13 +90,13 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules) $(shell ls $(DEVICE_PATH)/recovery/root/vendor/lib/modules)\")
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 262144
+BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 82726912
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 8053063680
-BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
+BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 8048869376
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
 
@@ -151,9 +151,9 @@ RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_MAX_BRIGHTNESS := 425
-TW_DEFAULT_BRIGHTNESS := 150
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
+TW_DEFAULT_BRIGHTNESS := 255
+TW_Y_OFFSET := 110
+TW_H_OFFSET := -110
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
