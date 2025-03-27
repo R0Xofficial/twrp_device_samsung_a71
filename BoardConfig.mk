@@ -17,7 +17,7 @@
 DEVICE_PATH := device/samsung/a71
 
 # Bootloader
-BOARD_VENDOR := qualcomm
+BOARD_VENDOR := samsung
 TARGET_SOC := sm6150
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
@@ -61,6 +61,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno618
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/recovery_dtbo
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_KERNEL_ARCH := arm64
 
@@ -96,9 +97,9 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
 
 # Dynamic Partitions
 BOARD_SUPER_PARTITION_SIZE := 8053063680
-BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
-BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 8048869376
-BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
+BOARD_SUPER_PARTITION_GROUPS := samsung_dynamic_partitions
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_SIZE := 8048869376
+BOARD_SAMSUNG_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product odm
 
 # System as root
 BOARD_ROOT_EXTRA_FOLDERS := carrier data_mirror debug_ramdisk efs linkerconfig metadata odm_dlkm oem optics postinstall prism second_stage_resources spu system_ext vendor_dlkm system_dlkm
