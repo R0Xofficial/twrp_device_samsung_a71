@@ -26,7 +26,6 @@
 #
 
 on init
-    setenforce 0
 #  Backlight and other settings
     write /sys/class/backlight/panel0-backlight/brightness 200
 
