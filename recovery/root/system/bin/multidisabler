@@ -8,7 +8,6 @@ OLD_BOOT_IMG="${TEMP_DIR}/old-boot.img"
 NEW_BOOT_IMG="${TEMP_DIR}/new-boot.img"
 UNPACKED_BOOT_DIR="${TEMP_DIR}/unpacked_boot"
 
-# Cleanup function to remove temporary files
 cleanup() {
   rm -rf "${UNPACKED_BOOT_DIR}"
 }
